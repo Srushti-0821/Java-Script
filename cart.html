@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .main1 {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .main2 {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .main3 {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .img1 {
+            margin-bottom: 3%;
+        }
+
+        .btn {
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        .btn1 {
+            background-color: white;
+            color: black;
+            width: 60%;
+        }
+
+        .btn2 {
+            background-color: white;
+            color: black;
+            width: 70%;
+            height: 2vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div>
+            <img src="./image/1.png" alt="" height="100px" class="img1">
+        </div>
+
+        <div>
+            <h3>price is: 500</h3>
+        </div>
+
+        <div class="main">
+            <button onclick="add()" class="btn1">+</button>
+            <p id="para"></p>
+            <button onclick="sub()" class="btn2">-</button>
+        </div>
+
+        <div>
+            <p>Total Price is : <span id="tot"></span></p>
+        </div>
+
+    </div>
+    <!-- ********************************************************************* -->
+
+    <div class="main1">
+        <div>
+            <img src="./image/2.png" alt="" height="100px" class="img1">
+        </div>
+
+        <div>
+            <h3>price is: 1500</h3>
+        </div>
+
+        <div class="main1">
+            <button onclick="add1()" class="btn1">+</button>
+            <p id="para1"></p>
+            <button onclick="sub1()" class="btn2">-</button>
+        </div>
+
+        <div>
+            <p>Total Price is : <span id="tot1"></span></p>
+        </div>
+
+    </div>
+
+    <!-- ********************************************************************* -->
+
+    <div class="main2">
+        <div>
+            <img src="./image/3.png" alt="" height="100px" class="img1">
+        </div>
+
+        <div>
+            <h3>price is: 1000</h3>
+        </div>
+
+        <div class="main2">
+            <button onclick="add2()" class="btn1">+</button>
+            <p id="para2"></p>
+            <button onclick="sub2()" class="btn2">-</button>
+        </div>
+
+        <div>
+            <p>Total Price is : <span id="tot2"></span></p>
+        </div>
+
+    </div>
+
+    <!-- ********************************************************************* -->
+
+    <div class="main3">
+        <div>
+            <img src="./image/4.png" alt="" height="100px" class="img1">
+        </div>
+
+        <div>
+            <h3>price is: 1500</h3>
+        </div>
+
+        <div class="main3">
+            <button onclick="add3()" class="btn1">+</button>
+            <p id="para3"></p>
+            <button onclick="sub3()" class="btn2">-</button>
+        </div>
+
+        <div>
+            <p>Total Price is : <span id="tot3"></span></p>
+        </div>
+
+    </div>
+
+    <!-- ********************************************************************* -->
+
+
+    <div class="btn">
+        <p>Grand Total is : <span id="total"></span></p>
+    </div>
+
+    <!-- ********************************************************************* -->
+
+
+    <script>
+        let a = 0;
+
+        first = 500;
+
+        function add() {
+            document.getElementById("para").innerHTML = ++a;
+            document.getElementById("tot").innerHTML = a * first;
+            updatetotal()
+        }
+
+        function sub() {
+            if (a > 0) {
+                document.getElementById("para").innerHTML = --a;
+                document.getElementById("tot").innerHTML = a * first;
+            }
+            updatetotal()
+        }
+
+        // ***************************************************************************
+
+
+        let b = 0;
+
+        second = 1500;
+
+        function add1() {
+            document.getElementById("para1").innerHTML = ++b;
+            document.getElementById("tot1").innerHTML = b * second;
+            updatetotal()
+        }
+
+        function sub1() {
+            if (b > 0) {
+                document.getElementById("para1").innerHTML = --b;
+                document.getElementById("tot1").innerHTML = b * second;
+            }
+            updatetotal()
+        }
+
+        // ***************************************************************************
+
+
+        let c = 0;
+
+        third = 1000;
+
+        function add2() {
+            document.getElementById("para2").innerHTML = ++c;
+            document.getElementById("tot2").innerHTML = c * third;
+            updatetotal()
+        }
+
+        function sub2() {
+            if (c > 0) {
+                document.getElementById("para2").innerHTML = --c;
+                document.getElementById("tot2").innerHTML = c * third;
+            }
+            updatetotal()
+        }
+
+        // ***************************************************************************
+
+        let d = 0;
+
+        fourth = 2000;
+
+        function add3() {
+            document.getElementById("para3").innerHTML = ++d;
+            document.getElementById("tot3").innerHTML = d * fourth;
+            updatetotal()
+        }
+
+        function sub3() {
+            if (d > 0) {
+                document.getElementById("para3").innerHTML = --d;
+                document.getElementById("tot3").innerHTML = d * fourth;
+            }
+            updatetotal()
+        }
+
+        // ***************************************************************************
+
+        function updatetotal() {
+            let totalvalue = (a * first) + (b * second) + (c * third) + (d * fourth);
+            document.getElementById("total").innerHTML = totalvalue;
+        }
+
+    </script>
+</body>
+
+</html>
