@@ -8,71 +8,154 @@
 </head>
 
 <body>
-    <table border="1">
 
-        <label for="">Name</label>
-        <input type="text" oninput="stuname()" id="name1"> <br><br>
+    <label for="">ENTER STUDENT NAME :</label>
+    <input type="text" name="" id="one" oninput="demo()">
+<br>
+    <label for="">ADD IMAGE</label>
+    <input type="file" name="" id="">
 
+
+    <br>
+    <br>
+    <table border="2">
+        <TR>
+            <th>NAME : </th>
+            <td colspan="4"> <span id="sth-name"></span> </td>
+        </TR>
         <tr>
-            <th>Name <span id="name2"></span></th>
-            <td colspan="3"></td>
-        </tr>
 
-        <tr>
             <th>SUBJECT</th>
-            <th>INTERNAL</th>
-            <th>EXTERNAL</th>
-            <th>TOTAL</th>
+            <th>TOTAL MARKS</th>
+            <th>MID - SEM</th>
+            <th>FINAL</th>
+            <th> OBTAIN TOTAL</th>
         </tr>
 
         <tr>
-            <th>PHP</th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
+            <th>MATHS</th>
+            <th>100</th>
+
+            <th>
+                <input type="number"  max="30" min="0" value="ENTER VALUE BELOW 30" id="maths-mid" size="10" oninput="demo()">
+            </th>
+
+            <th>
+                <input type="number" max="70" min="0" value="ENTER VALUE BELOW 70" id="maths-final" size="10" oninput="demo()">
+            </th>
+            <th> <span id="maths-total"></span></th>
         </tr>
 
         <tr>
-            <th>DBMS</th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
+            <th>SCIENCE</th>
+            <th>100</th>
+
+            <th>
+                <input type="text" id="science-mid" size="10" oninput="demo()">
+            </th>
+
+            <th>
+                <input type="text" id="science-final" size="10" oninput="demo()">
+            </th>
+            <th> <span id="science-total"></span></th>
         </tr>
 
         <tr>
-            <th>C Language</th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
+            <th>HINDI</th>
+            <th>100</th>
+
+            <th>
+                <input type="text" id="hindi-mid" size="10" oninput="demo()">
+            </th>
+
+            <th>
+                <input type="text" id="hindi-final" size="10" oninput="demo()">
+            </th>
+            <th> <span id="hindi-total"></span></th>
         </tr>
 
         <tr>
-            <th>DSA</th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
+            <th>GUJARATI</th>
+            <th>100</th>
+
+            <th>
+                <input type="text" id="gujarati-mid" size="10" oninput="demo()">
+            </th>
+
+            <th>
+                <input type="text" id="gujarati-final" size="10" oninput="demo()">
+            </th>
+            <th> <span id="gujarati-total"></span></th>
         </tr>
 
         <tr>
-            <th>ASP.NET</th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-            <th><span><input type="number" name="" id=""></span></th>
-        </tr>
-            <th>TOTAL</th>
-            <th colspan="3"></th>
+            <th>TOTAL </th>
+            <th>400</th>
+            <th id="mid-total"></th>
+            <th id="final-total"> </th>
+            <th id="total"></th>
         </tr>
 
         <tr>
-            <th>PERSANTAGE</th>
-            <th colspan="3"></th>
+            <th>PER </th>
+            <td colspan="4"> <span id="per"></span></td>
+
         </tr>
     </table>
 
+
     <script>
-        function stuname() {
-            document.getElementById("name2") = value;
-        }
+        function demo() {
+            let a = document.getElementById("one").value;
+            document.getElementById("sth-name").innerHTML = a;
+
+
+            let mathsmid = document.getElementById("maths-mid").value;
+            let mathsfinal = document.getElementById("maths-final").value;
+            let mathstotal = Number(mathsmid) + Number(mathsfinal);
+            document.getElementById("maths-total").innerHTML = mathstotal;
+
+
+            let sciencemid = document.getElementById("science-mid").value;
+            let sciencefinal = document.getElementById("science-final").value;
+            let sciencetotal = Number(sciencemid) + Number(sciencefinal);
+            document.getElementById("science-total").innerHTML = sciencetotal;
+
+
+            let hindimid = document.getElementById("hindi-mid").value;
+            let hindifinal = document.getElementById("hindi-final").value;
+            let hinditotal = Number(hindimid) + Number(hindifinal);
+            document.getElementById("hindi-total").innerHTML = hinditotal;
+
+
+            let gujaratimid = document.getElementById("gujarati-mid").value;
+            let gujaratifinal = document.getElementById("gujarati-final").value;
+            let gujaratitotal = Number(gujaratimid) + Number(gujaratifinal);
+            document.getElementById("gujarati-total").innerHTML = gujaratitotal;
+
+
+            document.getElementById("mid-total").innerHTML = Number(mathsmid) + Number(sciencemid) + Number(hindimid) + Number(gujaratimid);
+
+            document.getElementById("final-total").innerHTML = Number(mathsfinal) + Number(sciencefinal) + Number(hindifinal) + Number(gujaratifinal);
+
+            let finalmarks = document.getElementById("total").innerHTML = Number(mathstotal) + Number(sciencetotal) + Number(hinditotal) + Number(gujaratitotal);
+            
+            let per = finalmarks * 100 / 400;
+            let finalper = per.toFixed(2)
+            
+
+
+            if(finalper < 100) {
+                document.getElementById("per").innerHTML = finalper;
+            } 
+
+            else {
+                document.getElementById("per").innerHTML = "INVALID MARKS";
+                document.getElementById("per").style.color = "red";
+            }
+
+            
+        } 
     </script>
 </body>
 
